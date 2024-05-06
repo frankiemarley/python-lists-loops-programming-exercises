@@ -8,5 +8,16 @@ all_colors = [
 	{"label": 'Purple', "sexy": False},
 ]
 
-# Your code here
+
+def filter_colors(colors):
+	return colors["sexy"] == True
+
+resulting_colors= list(filter(filter_colors, (all_colors)))
+    
+def generate_li(colors):
+   	return list(map(lambda x: f"<li>{x['label']}</li>", colors))
+
+html_colors= generate_li(resulting_colors)
+
+print(html_colors)
 
